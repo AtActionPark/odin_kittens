@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <header>
+    <%= link_to 'Create', create_path %>
+  </header>
+  <div class="content">
+    <% flash.each do |key, value| %>
+      <div class="flash" ><%= value %></div>
+    <% end %>
+    <%= yield %>
+  </div>
 </body>
 </html>
